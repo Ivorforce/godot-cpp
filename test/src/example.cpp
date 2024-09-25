@@ -207,6 +207,7 @@ void Example::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("test_string_is_forty_two"), &Example::test_string_is_forty_two);
 	ClassDB::bind_method(D_METHOD("test_string_resize"), &Example::test_string_resize);
 	ClassDB::bind_method(D_METHOD("test_typed_array_of_packed"), &Example::test_typed_array_of_packed);
+	ClassDB::bind_method(D_METHOD("test_packed_destruct"), &Example::test_packed_destruct);
 	ClassDB::bind_method(D_METHOD("test_vector_ops"), &Example::test_vector_ops);
 	ClassDB::bind_method(D_METHOD("test_vector_init_list"), &Example::test_vector_init_list);
 
@@ -440,6 +441,10 @@ TypedArray<PackedInt32Array> Example::test_typed_array_of_packed() const {
 	packed_arr2.push_back(4);
 	arr.push_back(packed_arr2);
 	return arr;
+}
+
+void Example::test_packed_destruct() const {
+	auto x = PackedInt32Array();
 }
 
 int Example::test_vector_ops() const {

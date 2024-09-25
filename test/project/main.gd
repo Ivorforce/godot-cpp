@@ -164,6 +164,8 @@ func _ready():
 	assert_equal(custom_callable.get_argument_count(), 2)
 	assert_equal(str(custom_callable), "<MyCallableCustom>");
 
+	example.test_packed_destruct()
+
 	# PackedArray iterators
 	assert_equal(example.test_vector_ops(), 105)
 	assert_equal(example.test_vector_init_list(), 105)
