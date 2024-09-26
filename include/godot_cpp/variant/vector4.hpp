@@ -55,8 +55,7 @@ struct _NO_DISCARD_ Vector4 {
 			real_t z;
 			real_t w;
 		};
-		[[deprecated("Use coord instead")]]
-		real_t components[4];
+		[[deprecated("Use coord instead")]] real_t components[4];
 		real_t coord[4] = { 0, 0, 0, 0 };
 	};
 
