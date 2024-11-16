@@ -253,7 +253,6 @@ void Example::_bind_methods() {
 
 	{
 		MethodInfo mi;
-		mi.arguments.push_back(PropertyInfo(Variant::STRING, "some_argument"));
 		mi.name = "varargs_func";
 		ClassDB::bind_vararg_method(METHOD_FLAGS_DEFAULT, "varargs_func", &Example::varargs_func, mi);
 	}

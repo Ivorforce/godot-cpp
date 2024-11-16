@@ -70,6 +70,7 @@ func _ready():
 	var var_ref = ExampleRef.new()
 	assert_not_equal(example.extended_ref_checks(var_ref).get_instance_id(), var_ref.get_instance_id())
 	assert_equal(example.varargs_func("some", "arguments", "to", "test"), 4)
+	assert_equal(example.varargs_func(), 0)
 	assert_equal(example.varargs_func_nv("some", "arguments", "to", "test"), 46)
 	example.varargs_func_void("some", "arguments", "to", "test")
 	assert_equal(custom_signal_emitted, ["varargs_func_void", 5])
@@ -275,8 +276,6 @@ func _ready():
 	assert_equal(library_path.begins_with("res://"), false)
 	assert_equal(library_path, ProjectSettings.globalize_path(library_path))
 	assert_equal(FileAccess.file_exists(library_path), true)
-
-	exit_with_status()
 
 func _on_Example_custom_signal(signal_name, value):
 	custom_signal_emitted = [signal_name, value]
